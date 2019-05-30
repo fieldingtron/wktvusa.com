@@ -1,0 +1,10 @@
+<!-- <script src="{{ "js/app.js" | absURL }}"></script> -->
+
+
+{{ $jquery := resources.Get "js/jquery.min.js" }}
+{{ $popperjs := resources.Get "js/popper.min.js" }}
+{{ $bootstrap := resources.Get "js/bootstrap.min.js" }}
+{{ $app := resources.Get "js/app.js" }}
+{{ $js := slice $jquery $popperjs $bootstrap $app | resources.Concat "js/bundle.js" | resources.Minify }}
+
+<script src="{{$js.RelPermalink}}"></script>

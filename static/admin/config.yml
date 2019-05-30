@@ -1,0 +1,57 @@
+backend:
+  name: git-gateway
+  
+media_folder: "content/images"
+public_folder: "/images"
+collections:
+  
+  - name: "news"
+    label: "News Item"
+    folder: "content/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Image", name: "imagef", widget: "image", required: false}
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "videos"
+    label: "Video News Item"
+    folder: "content/videos"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}_{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Image", name: "imagef", widget: "image", required: false}
+      - { label: "Youtube ID: like fRmT8eyegU0", name: "youtube", widget: "string" , hint: "this is the Youtube video ID and NOT the URL", pattern: [".{11,11}", "Must have 11 characters and match youtube id"]}
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Main Pages"
+    delete: false
+    files:
+    - file: "content/_index.md"
+      label: "Home Page"
+      name: "home"
+      fields:
+        - {label: Title, name: title, widget: string}
+        - {label: "Ads", name: ads, widget: list, fields: [
+            {label: "Image", name: "image", widget: "image"},
+            {label: "Description", name: "desc", widget: string},
+            {label: "Youtube ID: like fRmT8eyegU0", name: "youtube", widget: string},
+            {label: "URL", name: "url", widget: string}]}
+    - file: "content/organization/_index.md"
+      label: "Organization Page"
+      name: "organization"
+      fields:
+        - {label: Title, name: title, widget: string}
+        - {label: "Members", name: members, widget: list, fields: [
+          {label: "Name", name: "name", widget: string},
+          {label: "Title", name: "title", widget: string},
+          {label: "Picture", name: "pic", widget: "image"},
+          {label: "Contact", name: "info", widget: string}]}
+        - {label: Body, name: body, widget: markdown}
+       
+    

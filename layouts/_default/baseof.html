@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+    <head>
+
+        {{ block "site/meta" . }}{{ partial "site/meta.html" . }}{{ end }}
+        <title>{{ block "title" . }}
+            {{- with .Title }}{{ . }} | {{ end }}{{ .Site.Title -}}
+        {{ end }}</title>
+
+        {{ range .AlternativeOutputFormats }}
+            <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+        {{ end }}
+
+        {{ block "site/styles" . }}{{ partialCached  "site/styles.html" . }}{{ end }}
+        <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    </head>
+    <body>
+      <header class="bg-dark text-white p-2">
+
+        <div class="container bg-dark my-0">
+          <h3>
+            header here I am 
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat cum aut reiciendis beatae iure quae omnis incidunt unde? Voluptas dolorem deleniti ipsum suscipit cum molestias perferendis. Atque pariatur commodi rem!
+          </p>      
+        </div>
+       
+      </header>
+      {{ block "navbar" . }}{{ partialCached  "site/navbar.html" . }}{{ end }}
+        <div class="site-main">
+            <div class="container">
+            {{ block "main" . }}{{ end }}
+            </div>
+        </div>
+        {{ block "footer" . }}{{ partialCached  "site/footer.html" . }}{{ end }}
+        {{ block "site/scripts" . }}{{ partialCached  "site/scripts.html" . }}{{ end }}
+    </body>
+</html>

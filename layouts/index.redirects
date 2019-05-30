@@ -1,0 +1,15 @@
+# redirects for Netlify - https://www.netlify.com/docs/redirects/
+/home   / 302
+/mainpages/ /
+/admin /admin/
+
+http://wktvusa.netlify.com/* https://www.wktvusa.com/:splat 301!
+https://wktvusa.netlify.com/* https://www.wktvusa.com/:splat 301!
+#news
+
+
+{{- range $p := .Site.Pages -}}
+{{- range .Aliases }}
+{{ . }} {{ $p.RelPermalink -}}
+{{- end }}
+{{- end -}}

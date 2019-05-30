@@ -1,0 +1,39 @@
+---
+label: Video
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+  hidden: false
+- type: datetime
+  name: date
+  label: date
+- type: file
+  name: imagef
+  label: imagef
+- type: text
+  name: youtube
+  label: youtube
+  hidden: false
+- type: text
+  name: author
+  label: author
+  description: Type your Name here
+  hidden: true
+- type: number
+  name: id
+  label: id
+  hidden: true
+- type: file
+  name: image
+  label: image
+  hidden: true
+- type: list
+  name: tags
+  label: tags
+  hidden: true
+- type: text
+  name: youtube-url
+  label: youtube-url
+  hidden: true

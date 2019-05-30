@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="row">
+    <div class="col-md-8">
+        <h1 class="h3"> {{ .Title }} </h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i>
+                  </a></li>
+                  <li class="breadcrumb-item"><a href="/videos/">Videos</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">{{ .Params.title }}</li>
+                </ol>
+              </nav>
+              <p><strong>Date:</strong> {{ dateFormat ( or $.Site.Params.dateFormat " Jan 02, 2006" ) $.Page.Params.LastMod }}</p>
+
+            <p>{{.Params.description}} </p>
+                {{ $plink := .Permalink}}
+                {{ $title := .Title }}
+                {{ $yid := .Params.youtube}}
+    
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ $yid }}?rel=0" allowfullscreen></iframe>
+            </div>
+            
+            {{ .Content }}
+    </div>
+    <div class="col-md-4 " id="sidemenu">
+         {{ partialCached  "main-sidebar.html" .}}
+    </div>
+</div>
+
+{{ end }}

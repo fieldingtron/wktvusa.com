@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<!-- <link rel="stylesheet" href="{{ "css/bootstrap.css" | absURL }}">
+<link rel="stylesheet" href="{{ "css/app.css" | absURL }}"> -->
+
+<!-- <link href="/css/bootstrap.min.css" rel="stylesheet"> -->
+<!-- {{- $s := resources.Get "sass/app.scss" | toCSS | postCSS (dict "config" "postcss.config.js") | minify -}}
+<link rel="stylesheet" href="{{ $s.Permalink }}" /> -->
+
+{{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" false ) }}
+{{ $style := resources.Get "sass/main.scss" | toCSS $options | postCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" >
+
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">

@@ -1,0 +1,9 @@
+{{ $imagename := (strings.TrimPrefix "/images/" .imagename) }}
+{{ $css := .css }}
+{{ $alt := .alt }}
+{{ with .imgdir }}
+    {{ with .Resources.GetMatch  $imagename }}
+        {{ $imageResized := (.Fill "600x450") }} 
+        <img src="{{ $imageResized.RelPermalink }}" class="{{ $css}}" alt="{{ $alt }}">
+    {{ end }}
+{{ end }}

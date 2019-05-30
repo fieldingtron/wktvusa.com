@@ -1,0 +1,212 @@
+body {
+  background: lightgray;
+  color: black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 5px; }
+
+.site-main {
+  background: lightgray; }
+  .site-main .container {
+    padding-top: 15px;
+    background: white;
+    border: 1px dotted grey; }
+
+.text_overlay {
+  position: absolute;
+  bottom: 0;
+  background: black;
+  background: rgba(0, 0, 0, 0.5);
+  /* Black see-through */
+  width: 100%;
+  opacity: 1;
+  color: white !important;
+  font-size: 1.1em;
+  line-height: 2em;
+  text-align: center; }
+
+#homepagegrid IMG {
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease; }
+
+#homepagegrid IMG:hover {
+  filter: brightness(100%);
+  -webkit-filter: brightness(100%); }
+
+#homepagegrid {
+  background-color: lightgrey; }
+  #homepagegrid .thumbnailz {
+    position: relative; }
+  #homepagegrid .captionz {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    opacity: 1;
+    color: white !important;
+    font-size: 1.1em;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    line-height: 2em; }
+  #homepagegrid .textshadow {
+    text-shadow: 2px 2px black; }
+
+#ranktable {
+  border-collapse: collapse;
+  font-family: verdana;
+  font-size: 1.1em;
+  margin-left: auto;
+  margin-right: auto;
+  /* hide standard table (collapsed) border */
+  border-style: hidden;
+  -webkit-box-shadow: 0 0 0 1px #AAA;
+          box-shadow: 0 0 0 1px #AAA;
+  border-radius: 10px;
+  overflow: hidden;
+  /* this draws the table border  */ }
+  #ranktable THEAD {
+    background-color: #DCE9F9; }
+  #ranktable TH {
+    border: 1px solid #CCC;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px; }
+  #ranktable TD {
+    border: 1px solid #CCC;
+    vertical-align: middle;
+    text-align: center;
+    padding: 3px 6px; }
+  #ranktable TBODY TR:hover {
+    background-color: #F5FBDF; }
+  #ranktable UL {
+    padding-left: 2em; }
+  #ranktable LI {
+    list-style-type: circle;
+    font-size: 1.1em;
+    text-align: left;
+    line-height: 1em; }
+
+SPAN.rank {
+  background: #BFBFBE;
+  border-radius: 0.8em;
+  color: #FFFFFF;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.4em;
+  margin-right: 5px;
+  text-align: center;
+  width: 1.4em; }
+
+/* Mobile first styles go here */
+.hide-mobile {
+  display: none; }
+
+.blog {
+  margin: 1em;
+  position: relative; }
+
+.blog .card {
+  -webkit-box-shadow: 0 0 20px #ccc;
+          box-shadow: 0 0 20px #ccc;
+  margin-bottom: 1em; }
+
+.blog .card img {
+  width: 100%;
+  height: 12em; }
+
+.blog .card-title {
+  color: #F97300; }
+
+.blog .card-body {
+  padding: 1em; }
+
+FOOTER a:link {
+  color: white; }
+
+FOOTER a:hover {
+  color: white; }
+
+FOOTER a:visited {
+  color: whitesmoke; }
+
+@media (max-width: 500px) {
+  .text-xs-center {
+    text-align: center; } }
+
+.smallranklogo {
+  max-width: 200px; }
+
+UL.pros LI:before {
+  content: "\f00c";
+  color: #54a054;
+  font-size: 1.9em;
+  padding-right: 0.4em;
+  font-family: FontAwesome; }
+
+UL.cons LI:before {
+  content: "\f00d";
+  color: #d13838;
+  font-size: 1.9rem;
+  padding-right: 0.4em;
+  font-family: FontAwesome; }
+
+UL.pros, UL.cons {
+  line-height: 1.7em; }
+
+.list-inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: #F97300; }
+
+.social {
+  font-size: 2 em; }
+
+.secondz {
+  color: #F97300; }
+
+.modal-dialog {
+  max-width: 800px;
+  margin: 30px auto; }
+
+.modal-body {
+  position: relative;
+  padding: 0px; }
+
+.close {
+  position: absolute;
+  right: -30px;
+  top: 0;
+  z-index: 999;
+  font-size: 2rem;
+  font-weight: normal;
+  color: #fff;
+  opacity: 1; }
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0; }
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute; }
+
+.nolist {
+  list-style-type: none;
+  padding-left: 0px; }
+
+.half-black {
+  background: rgba(0, 0, 0, 0.5); }

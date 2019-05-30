@@ -1,0 +1,20 @@
+{{ range $index, $element := .Params.ads }}
+    {{ with $element.url }}<a href="{{$element.url}}" target="_blank">{{end}}
+            {{ with $element.youtube }} 
+            
+            
+
+                <div class="embed-responsive embed-responsive-4by3">
+
+                        {{ partial  "videourl.html" (dict "youtube" $element.youtube ) }}
+                        
+                
+                </div>
+
+
+
+            {{ else }} 
+            {{ partial "imagecode.html" (dict "imagename" $element.image  "alt" "Advertisement" "css" "img-fluid py-1" "imgdir" ($.Site.GetPage "section" "images") ) }}
+            {{ end }}
+            {{ with $element.url }}</a>{{end}}      
+{{ end }}
